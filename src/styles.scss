@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+@import 'themes/netcentric/netcentric';
+
+
+.bg{
+ @include theme-background;
+	    background-image: url($path-image-title-large);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:$c-primary-lighter;
+    /* Full height */
+    height: 350px; 
+
+    /* Center and scale the image nicely */
+    position:relative;
+    overflow:hidden;
+   
+}
+header a{
+    @include link-with-logo;
+    margin: $vertical-rythm-spacing-text;
+    font-size:50px;
+
+}
+
+header h1{
+    font-size: $font-size-headline-primary-large;
+    color: $c-secondary;
+    weight: $font-weight-regular;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+#breadcrumb ul{
+    padding: 10px 16px;
+    list-style: none;
+}
+#breadcrumb ul li {
+    display:inline;
+}
+#breadcrumb ul li+li:before {
+    padding: 8px;
+    color: black;
+    content: "\2192";
+}
+#breadcrumb ul li a{
+    color: $c-primary-lighter;
+}
+#breadcrumb ul li a:hover{
+    color: $c-primary;
+}
+
+#section-shop h2{
+    color: $c-primary;
+    font-size: $font-size-headline-component-large;
+    weight: $font-weight-regular;
+}
+#section-shop ul{
+     columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+    margin-left:-40px;
+}
+#section-shop li{
+    border-style:dotted;
+    border-color: $c-third;
+}
+
+#section-shop button{
+    @include text-button;
+    display: inline-block;
+}
+#section-shop footer{
+    background-color: $c-secondary;
+     margin-top:$vertical-rythm-spacing-text;
+}
+#section-shop footer p{
+    weight: $font-weight-bold; 
+    color:#000; 
+    display: inline-block; 
+    padding-left:180px;
+}
+
+#section-shop footer h3{
+    margin-top: 10px;
+    margin-left: 10px;
+    weight: $font-weight-bold;
+    margin-bottom:$vertical-rythm-spacing-text;
+}
+footer{
+    background-color: $c-primary; 
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+footer{
+    margin-top:$vertical-rythm-spacing-component;
+     margin-bottom: $vertical-rythm-spacing-text;
+    color: $c-secondary;
+
+}
+footer a{
+    @include link-with-logo;
+    margin-left: $vertical-rythm-spacing-component;
+    margin-top: $vertical-rythm-spacing-text;
+    margin-bottom: $vertical-rythm-spacing-text;
+
+}
+article{
+    margin-left: $vertical-rythm-spacing-text; 
+}
+
+
+@media
+only screen and (min-resolution: 2dppx) and (max-width: 480px) {
+    /* Small screen, retina */
+    .bg  { 
+    @include theme-background;
+     height: 280px; 
+    background-image: url($path-image-title-small-2x); 
+     /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+}
+@media only screen and (max-width: 480px) {
+    /* Small screen, non-retina */
+    .bg { 
+    @include theme-background;
+      background-image: url($path-image-title-small);
+
+    /* Full height */
+    height: 280px; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .rightColumn { 
+        background-color: $c-third;
+    }
+    .rightColumn td{
+        border-bottom: 1px solid $c-secondary-darker;
+
+    } 
+     .rightColumn th{
+        border-bottom: 1px dashed $c-secondary-darker;
+
+    }
+    .rightColumn h2{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        weight: $font-weight-regular;
+        font-size: $font-size-headline-component-large;
+    }
+    .rightColumn ul{
+        float: right;
+        list-style:none;
+        width:270px;
+        border-bottom:1px dashed $c-secondary-darker;
+
+    } 
+    .rightColumn ul label{
+        float: left;
+       
+
+    } 
+      .rightColumn ul output{
+        float: right;
+       
+
+    }
+    .rightColumn th{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        font-size: $font-size-table-header;
+        weight: $font-weight-regular;
+    }
+    .rightColumn th{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        font-size: $font-size-table-header;
+        weight: $font-weight-regular;
+    }
+    .rightColumn button{
+        @include text-button;
+    }
+    .rightColumn span button{
+        @include cart-button;
+    } 
+
+    #checkout{
+         @include cart-button;
+    }
+    .totalPaid{
+        font-size: $font-size-final-output;
+        color:$c-primary;
+        weight:$font-weight-bold;
+    }  
+
+    .rightColumn input{
+       width:27px;
+       height:40px;
+
+    } 
+    .rightColumn footer{
+        background-color: $c-third;
+        color:#000;
+        font-size:$font-size-small;
+    } 
+       
+    .rightColumn footer a:link{
+        color: $c-primary;
+        background-image: none;
+    } 
+   #section-shop ul{
+    list-style: none;
+    margin-left:-40px;
+     columns: unset !important;
+    -webkit-columns: unset !important;
+    -moz-columns: unset !important;
+}
+    #section-shop footer p{
+       padding-left:250px;
+    }
+    header a{
+    @include link-with-logo;
+    margin: $vertical-rythm-spacing-text;
+    font-size:50px;
+
+}
+
+header h1{
+    font-size: $font-size-final-output;
+}  
+
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 47.5em ) {
+  .leftColumn { margin-right: 27.5em; }
+
+    .rightColumn { position: absolute; 
+        top:450px;
+        right: 65px; 
+        width: 28.75em; 
+        background-color: $c-third;
+    }
+    .rightColumn h2{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        weight: $font-weight-regular;
+        font-size: $font-size-headline-component-large;
+    }
+    .rightColumn th{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        font-size: $font-size-table-header;
+        weight: $font-weight-regular;
+    }
+    .rightColumn th{ 
+        color:$c-primary;
+        margin-top:20px;
+        margin-left:20px;
+        margin-bottom: $horizontal-rythm-spacing-text;
+        font-size: $font-size-table-header;
+        weight: $font-weight-regular;
+    }
+    .rightColumn button{
+        @include text-button;
+    }
+    .rightColumn span button{
+        @include cart-button;
+    }
+    .rightColumn footer{
+        background-color: $c-third;
+        color:#000;
+        font-size:$font-size-small;
+    }   
+    .rightColumn footer a{
+        color: $c-primary;
+        background-image: none;
+    } 
+    .rightColumn ul{
+        float: right;
+        list-style:none;
+        width:270px;
+        border-bottom:1px dashed $c-secondary-darker;
+
+    } 
+    .rightColumn td{
+        border-bottom: 1px solid $c-secondary-darker;
+
+    } 
+     .rightColumn th{
+        border-bottom: 1px dashed $c-secondary-darker;
+
+    } 
+    .rightColumn input{
+       width:27px;
+       height:40px;
+
+    } 
+    .rightColumn output{
+       min-width:75px;
+       weight: $font-weight-regular;
+       float:right;
+    
+    } 
+    .rightColumn ul label{
+        float: left;
+       
+
+    } 
+      .rightColumn ul output{
+        float: right;
+       
+
+    }
+   
+
+    #checkout{
+         @include cart-button;
+    }
+    .totalPaid{
+        font-size: $font-size-final-output;
+        color:$c-primary;
+        weight:$font-weight-bold;
+    }  
+}

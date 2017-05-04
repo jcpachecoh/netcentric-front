@@ -1,0 +1,66 @@
+   <article id="section-shoppingcart" >
+ <h2>Your boat's shopping cart</h2>
+      <form id="shoppingcart-form">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h3>Waterproof camera</h3>
+                <p>Wondering what to do when there's only a light breeze? Back to your childhood!</p>
+                <div>
+                  <button>Remove</button>
+                </div>
+              </td>
+              <td>
+                <output>&euro;74.74</output>
+              </td>
+              <td>
+                <input type="number" min="1" value="1">
+                <span>
+                <button type="button" aria-label="decrease">
+                -
+                </button>
+                <button type="button" aria-label="step up">
+                +
+                </button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                <ul>
+                  <li>
+                    <label>Price before <abbr title="Value Added Tax">VAT</abbr>:</label>
+                    <output>&euro;74.74</output>
+                  </li>
+                  <li>
+                    <label><abbr title="Value Added Tax">VAT</abbr> @ <strong></strong>%:</label>
+                    <output>&euro;74.74</output>
+                  </li>
+                  
+                  <li >
+                    <label>Total to be paid:</label>
+                    <output class="totalPaid">&euro;74.74</output>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <footer>
+          <p>
+            <em>Free shipping! We will fly your order to your boat with one of our Netcentric drones the moment you click that checkout button!</em>
+          </p>
+          <a href="#">Continue shopping</a> <em>or</em> <button type="submit" id="checkout" form="shoppingcart-form">Proceed to Checkout</button>
+        </footer>
+      </form>
+    </article>
