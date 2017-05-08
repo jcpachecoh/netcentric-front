@@ -99,13 +99,12 @@ footer{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-footer{
-    margin-top:$vertical-rythm-spacing-component;
+  margin-top:$vertical-rythm-spacing-component;
      margin-bottom: $vertical-rythm-spacing-text;
     color: $c-secondary;
-
+    margin-top:200px;
 }
+
 footer a{
     @include link-with-logo;
     margin-left: $vertical-rythm-spacing-component;
@@ -222,6 +221,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 480px) {
         background-color: $c-third;
         color:#000;
         font-size:$font-size-small;
+        margin-top:0px;
     } 
        
     .rightColumn footer a:link{
@@ -296,6 +296,7 @@ header h1{
         background-color: $c-third;
         color:#000;
         font-size:$font-size-small;
+        margin-top:0px;
     }   
     .rightColumn footer a{
         color: $c-primary;
@@ -317,7 +318,7 @@ header h1{
 
     } 
     .rightColumn input{
-       width:27px;
+       width:36px;
        height:40px;
 
     } 
@@ -346,5 +347,10 @@ header h1{
         font-size: $font-size-final-output;
         color:$c-primary;
         weight:$font-weight-bold;
-    }  
+    }
+     
+    #shoppingcart-table{
+    height:100px;
+        overflow: scroll; 
+    }
 }

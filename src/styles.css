@@ -142,12 +142,11 @@ footer {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
-
-footer {
+  background-size: cover;
   margin-top: 30px;
   margin-bottom: 10px;
-  color: #fff; }
+  color: #fff;
+  margin-top: 200px; }
 
 footer a {
   display: inline-block;
@@ -294,7 +293,8 @@ article {
   .rightColumn footer {
     background-color: #F8F8F8;
     color: #000;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-top: 0px; }
 
   .rightColumn footer a:link {
     color: #311b92;
@@ -395,7 +395,8 @@ article {
   .rightColumn footer {
     background-color: #F8F8F8;
     color: #000;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-top: 0px; }
 
   .rightColumn footer a {
     color: #311b92;
@@ -414,7 +415,7 @@ article {
     border-bottom: 1px dashed #cccccc; }
 
   .rightColumn input {
-    width: 27px;
+    width: 36px;
     height: 40px; }
 
   .rightColumn output {
@@ -449,6 +450,10 @@ article {
   .totalPaid {
     font-size: 22px;
     color: #311b92;
-    weight: 400; } }
+    weight: 400; }
+
+  #shoppingcart-table {
+    height: 100px;
+    overflow: scroll; } }
 
 /*# sourceMappingURL=styles.css.map */

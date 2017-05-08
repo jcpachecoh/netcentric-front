@@ -1,7 +1,7 @@
-   <article id="section-shoppingcart" >
+   <article id="section-shoppingcart" class="is-hidden" >
  <h2>Your boat's shopping cart</h2>
-      <form id="shoppingcart-form">
-        <table>
+      <form >
+        <table id="shoppingcart-table">
           <thead>
             <tr>
               <th>Product</th>
@@ -10,29 +10,6 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <h3>Waterproof camera</h3>
-                <p>Wondering what to do when there's only a light breeze? Back to your childhood!</p>
-                <div>
-                  <button>Remove</button>
-                </div>
-              </td>
-              <td>
-                <output>&euro;74.74</output>
-              </td>
-              <td>
-                <input type="number" min="1" value="1">
-                <span>
-                <button type="button" aria-label="decrease">
-                -
-                </button>
-                <button type="button" aria-label="step up">
-                +
-                </button>
-                </span>
-              </td>
-            </tr>
           </tbody>
           <tfoot>
             <tr>
@@ -40,16 +17,16 @@
                 <ul>
                   <li>
                     <label>Price before <abbr title="Value Added Tax">VAT</abbr>:</label>
-                    <output>&euro;74.74</output>
+                    <output id="basicTotal">&euro;</output>
                   </li>
                   <li>
                     <label><abbr title="Value Added Tax">VAT</abbr> @ <strong></strong>%:</label>
-                    <output>&euro;74.74</output>
+                    <output id="VAT">&euro;</output>
                   </li>
                   
                   <li >
                     <label>Total to be paid:</label>
-                    <output class="totalPaid">&euro;74.74</output>
+                    <output id="total">&euro;</output>
                   </li>
                 </ul>
               </td>

@@ -19,6 +19,7 @@
         "watch:css": "npm run css && onchange \"src/**/*.scss\" -- npm-run-all css",
         "watch:lint": "npm run lint && onchange \"src/**/*.{scss|html|js}\" -- npm run lint",
         "watch:test": "npm run test -- --watch",
+        "build": "npm-run-all lint css test",
         "start":"http-server"
     },
     "devDependencies": {
