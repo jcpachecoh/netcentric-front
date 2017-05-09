@@ -1,140 +1,156 @@
+/* eslint-disable */
 @charset "UTF-8";
 
 @import 'themes/netcentric/netcentric';
 
+.bg {
+    @include theme-background;
 
-.bg{
- @include theme-background;
-	    background-image: url($path-image-title-large);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:$c-primary-lighter;
+    background-image: url($path-image-title-large);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: $c-primary-lighter;
+
     /* Full height */
-    height: 350px; 
+    height: 350px;
 
     /* Center and scale the image nicely */
-    position:relative;
-    overflow:hidden;
-   
+    position: relative;
+    overflow: hidden;
 }
-header a{
+
+header a {
     @include link-with-logo;
-    margin: $vertical-rythm-spacing-text;
-    font-size:50px;
 
+    margin: $vertical-rythm-spacing-text;
+    font-size: 50px;
 }
 
-header h1{
+header h1 {
     font-size: $font-size-headline-primary-large;
     color: $c-secondary;
-    weight: $font-weight-regular;
+    font-weight: $font-weight-regular;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%);
 }
-#breadcrumb ul{
+
+#breadcrumb ul {
     padding: 10px 16px;
     list-style: none;
 }
+
 #breadcrumb ul li {
-    display:inline;
+    display: inline;
 }
-#breadcrumb ul li+li:before {
+
+#breadcrumb ul li + li:before {
     padding: 8px;
     color: black;
     content: "\2192";
 }
-#breadcrumb ul li a{
+
+#breadcrumb ul li a {
     color: $c-primary-lighter;
 }
-#breadcrumb ul li a:hover{
+
+#breadcrumb ul li a:hover {
     color: $c-primary;
 }
 
-#section-shop h2{
+#section-shop h2 {
     color: $c-primary;
     font-size: $font-size-headline-component-large;
-    weight: $font-weight-regular;
+    font-weight: $font-weight-regular;
 }
-#section-shop ul{
-     columns: 2;
+
+#section-shop ul {
+    columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
     list-style: none;
-    margin-left:-40px;
+    margin-left: -40px;
 }
-#section-shop li{
-    border-style:dotted;
+
+#section-shop li {
+    border-style: dotted;
     border-color: $c-third;
 }
 
-#section-shop button{
+#section-shop button {
     @include text-button;
     display: inline-block;
 }
-#section-shop footer{
+
+#section-shop footer {
     background-color: $c-secondary;
-     margin-top:$vertical-rythm-spacing-text;
-}
-#section-shop footer p{
-    weight: $font-weight-bold; 
-    color:#000; 
-    display: inline-block; 
-    padding-left:180px;
+     margin-top: $vertical-rythm-spacing-text;
 }
 
-#section-shop footer h3{
+#section-shop footer p {
+    font-weight: $font-weight-bold; 
+    color: #000; 
+    display: inline-block; 
+    padding-left: 145px;
+}
+
+#section-shop footer h3 {
     margin-top: 10px;
     margin-left: 10px;
-    weight: $font-weight-bold;
-    margin-bottom:$vertical-rythm-spacing-text;
-}
-footer{
-    background-color: $c-primary; 
- -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin-top:$vertical-rythm-spacing-component;
-     margin-bottom: $vertical-rythm-spacing-text;
-    color: $c-secondary;
-    margin-top:200px;
+    font-weight: $font-weight-bold;
+    margin-bottom: $vertical-rythm-spacing-text;
 }
 
-footer a{
+footer {
+    background-color: $c-primary; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top:$vertical-rythm-spacing-component;
+    margin-bottom: $vertical-rythm-spacing-text;
+    color: $c-secondary;
+    margin-top: 200px;
+}
+
+footer a {
     @include link-with-logo;
     margin-left: $vertical-rythm-spacing-component;
     margin-top: $vertical-rythm-spacing-text;
     margin-bottom: $vertical-rythm-spacing-text;
 
 }
-article{
+
+#section-shoppingcart{
     margin-left: $vertical-rythm-spacing-text; 
 }
 
-
 @media
 only screen and (min-resolution: 2dppx) and (max-width: 480px) {
+
     /* Small screen, retina */
     .bg  { 
     @include theme-background;
      height: 280px; 
-    background-image: url($path-image-title-small-2x); 
+    background-image: url($path-image-title-small-2x);
+
      /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     }
 }
-@media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 720px) {
+
     /* Small screen, non-retina */
     .bg { 
     @include theme-background;
-      background-image: url($path-image-title-small);
+    background-image: url($path-image-title-small);
 
     /* Full height */
     height: 280px; 
@@ -147,95 +163,90 @@ only screen and (min-resolution: 2dppx) and (max-width: 480px) {
     .rightColumn { 
         background-color: $c-third;
     }
-    .rightColumn td{
+    .rightColumn td {
         border-bottom: 1px solid $c-secondary-darker;
 
     } 
-     .rightColumn th{
+     .rightColumn th {
         border-bottom: 1px dashed $c-secondary-darker;
 
     }
-    .rightColumn h2{ 
+    .rightColumn h2 { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
         font-size: $font-size-headline-component-large;
     }
-    .rightColumn ul{
+    .rightColumn ul {
         float: right;
         list-style:none;
         width:270px;
         border-bottom:1px dashed $c-secondary-darker;
 
     } 
-    .rightColumn ul label{
-        float: left;
-       
-
-    } 
-      .rightColumn ul output{
+      .rightColumn ul output {
         float: right;
        
-
     }
-    .rightColumn th{ 
+    .rightColumn th { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
         font-size: $font-size-table-header;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
     }
-    .rightColumn th{ 
+    .rightColumn th { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
         font-size: $font-size-table-header;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
     }
-    .rightColumn button{
+    .rightColumn button {
         @include text-button;
     }
-    .rightColumn span button{
+    .rightColumn span button {
         @include cart-button;
+        margin: 3px;
     } 
 
-    #checkout{
+    #checkout {
          @include cart-button;
     }
-    .totalPaid{
+    .totalPaid {
         font-size: $font-size-final-output;
         color:$c-primary;
-        weight:$font-weight-bold;
+        font-weight:$font-weight-bold;
     }  
 
-    .rightColumn input{
+    .rightColumn input {
        width:27px;
        height:40px;
 
     } 
-    .rightColumn footer{
+    .rightColumn footer {
         background-color: $c-third;
         color:#000;
         font-size:$font-size-small;
         margin-top:0px;
     } 
        
-    .rightColumn footer a:link{
+    .rightColumn footer a:link {
         color: $c-primary;
         background-image: none;
     } 
-   #section-shop ul{
+   #section-shop ul {
     list-style: none;
     margin-left:-40px;
      columns: unset !important;
     -webkit-columns: unset !important;
     -moz-columns: unset !important;
-}
-    #section-shop footer p{
+    }
+    #section-shop footer p {
        padding-left:250px;
     }
     header a{
@@ -245,111 +256,123 @@ only screen and (min-resolution: 2dppx) and (max-width: 480px) {
 
 }
 
-header h1{
+header h1 {
     font-size: $font-size-final-output;
 }  
 
 }
 
 
+
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 47.5em ) {
-  .leftColumn { margin-right: 27.5em; }
+  .leftColumn { 
+  margin-right: 33.5em; 
+  }
 
     .rightColumn { position: absolute; 
         top:450px;
-        right: 65px; 
+        right: 100px; 
         width: 28.75em; 
         background-color: $c-third;
     }
-    .rightColumn h2{ 
+
+    .rightColumn h2 { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
         font-size: $font-size-headline-component-large;
     }
-    .rightColumn th{ 
+
+    .rightColumn th { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
         font-size: $font-size-table-header;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
     }
-    .rightColumn th{ 
+
+    .rightColumn th { 
         color:$c-primary;
         margin-top:20px;
         margin-left:20px;
         margin-bottom: $horizontal-rythm-spacing-text;
         font-size: $font-size-table-header;
-        weight: $font-weight-regular;
+        font-weight: $font-weight-regular;
     }
-    .rightColumn button{
+
+    .rightColumn button {
         @include text-button;
     }
+
     .rightColumn span button{
         @include cart-button;
     }
-    .rightColumn footer{
+
+    .rightColumn footer {
         background-color: $c-third;
         color:#000;
         font-size:$font-size-small;
         margin-top:0px;
-    }   
-    .rightColumn footer a{
+    }  
+
+    .rightColumn footer a {
         color: $c-primary;
         background-image: none;
     } 
-    .rightColumn ul{
+
+    .rightColumn ul {
         float: right;
         list-style:none;
         width:270px;
         border-bottom:1px dashed $c-secondary-darker;
 
     } 
-    .rightColumn td{
+
+    .rightColumn td {
         border-bottom: 1px solid $c-secondary-darker;
 
     } 
-     .rightColumn th{
+
+     .rightColumn th {
         border-bottom: 1px dashed $c-secondary-darker;
 
-    } 
-    .rightColumn input{
-       width:36px;
+    }
+
+    .rightColumn input {
+       width:30px;
        height:40px;
 
     } 
-    .rightColumn output{
+
+    .rightColumn output {
        min-width:75px;
-       weight: $font-weight-regular;
+       font-weight: $font-weight-regular;
        float:right;
     
     } 
-    .rightColumn ul label{
+
+    .rightColumn ul label {
         float: left;
-       
-
     } 
-      .rightColumn ul output{
+      .rightColumn ul output {
         float: right;
-       
-
     }
    
-
-    #checkout{
+    #checkout {
          @include cart-button;
     }
-    .totalPaid{
+    .totalPaid {
         font-size: $font-size-final-output;
         color:$c-primary;
-        weight:$font-weight-bold;
+        font-weight:$font-weight-bold;
     }
      
-    #shoppingcart-table{
+    #shoppingcart-table {
     height:100px;
         overflow: scroll; 
     }

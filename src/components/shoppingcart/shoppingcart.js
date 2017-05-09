@@ -1,5 +1,3 @@
-
-
 var SHOPPINGCART = {};
 SHOPPINGCART.model = {};
 
@@ -7,25 +5,29 @@ SHOPPINGCART.model.ShoppingCart = function(options) {
   // initializes the cart
   this.items = {};
   this.totalValues= {};
-  
   // callbacks
   var defaults = {
-    removeAll: function() {},
-    updateTotal: function() {},
-        updateItemQuantity: function() {},
-        removeItem: function() {}
+        removeAll: function() {
+          // any clear comments.
+        },
+        updateTotal: function() {
+          // any clear comments.
+        },
+        updateItemQuantity: function() {
+          // any clear comments.
+        },
+        removeItem: function() {
+          // any clear comments.
+        }
   };
-  
   // merge options with defaults
-  for (property in defaults) { 
+  for (var property in defaults) { 
     if (!options.hasOwnProperty(property)) { 
       options[property] = defaults[property]
     } 
   }
-  
   this.options = options;
 }
-
 // removes all items from the cart
 SHOPPINGCART.model.ShoppingCart.prototype.clear = function() {
   this.items = {};
@@ -35,7 +37,6 @@ SHOPPINGCART.model.ShoppingCart.prototype.clear = function() {
 
 SHOPPINGCART.model.ShoppingCart.prototype.removeI=function(id){
    if (this.items.hasOwnProperty(id)) {
-       var item = this.items[id];
        delete this.items[id];
    }
      this.options.updateTotal();
@@ -52,7 +53,11 @@ SHOPPINGCART.model.ShoppingCart.prototype.total = function() {
     beforeVAT = beforeVAT + (item.price * item.quantity);
     afterVAT=beforeVAT+(beforeVAT*vat);
   }
-  this.totalValues= { beforeVAT : beforeVAT, afterVAT : afterVAT,VAT: vat };
+  this.totalValues= { 
+    beforeVAT : beforeVAT, 
+    afterVAT : afterVAT,
+    VAT: vat 
+  };
   return beforeVAT;
 }
 
@@ -74,7 +79,8 @@ SHOPPINGCART.model.ShoppingCart.prototype.isEmpty = function() {
 // adds a new item to the cart or increases the quantity of an existing item
 SHOPPINGCART.model.ShoppingCart.prototype.add = function(id, price, quantity) {
   var is_new;
-  quantity = (typeof(quantity) != 'undefined') ? quantity : 1;
+  var a= (typeof(quantity) != 'undefined');
+  quantity =  a ? quantity : 1;
   if (this.items.hasOwnProperty(id)) {
     var item = this.items[id];
     item.quantity = item.quantity + quantity;
@@ -83,7 +89,10 @@ SHOPPINGCART.model.ShoppingCart.prototype.add = function(id, price, quantity) {
     is_new = false;
   }
   else {
-      this.items[id] = { quantity : quantity, price : price };
+      this.items[id] = { 
+        quantity : quantity, 
+        price : price 
+      };
       this.options.updateTotal();
       is_new = true;
     }
@@ -93,7 +102,8 @@ SHOPPINGCART.model.ShoppingCart.prototype.add = function(id, price, quantity) {
     
 // increases the quantity of an item in the cart
 SHOPPINGCART.model.ShoppingCart.prototype.increase = function(id, quantity) {
-  quantity = (typeof(quantity) != 'undefined') ? quantity : 1;
+  var a= (typeof(quantity) != 'undefined');
+  quantity =  a ? quantity : 1;
   if (this.items.hasOwnProperty(id)) {
     var item = this.items[id];
     item.quantity = item.quantity + quantity;
@@ -103,19 +113,17 @@ SHOPPINGCART.model.ShoppingCart.prototype.increase = function(id, quantity) {
     
 // decreases the quantity of an item in the cart
 SHOPPINGCART.model.ShoppingCart.prototype.decrease = function(id, quantity) {
-  quantity = (typeof(quantity) != 'undefined') ? quantity : 1;
+  var a= (typeof(quantity) != 'undefined');
+  quantity =  a ? quantity : 1;
   if (this.items.hasOwnProperty(id)) {
     var item = this.items[id];
     if (item.quantity >= quantity) {
         item.quantity = item.quantity - quantity;
       }
       else {
-        item.quantity = 0;
+        this.options.removeItem(id);
+        delete this.items[id];
       }
-    if (item.quantity == 0) {
-      delete this.items[id];
-      this.options.removeItem(id);
-    }
     this.options.updateTotal();
   }
 }

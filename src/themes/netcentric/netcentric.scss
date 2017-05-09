@@ -101,7 +101,8 @@ $page-max-width: 1180px;
 
   background: $c-primary;
   border-radius: 6px;
-  padding: $vertical-rythm-spacing-text;
+  padding: 5px;
+  margin: 2px;
   font-size: $font-size-base;
   color: $c-secondary;
 
@@ -148,7 +149,7 @@ html {
   padding-right: $horizontal-rythm-spacing-text;
   max-width: $page-max-width;
   box-sizing: border-box;
-  
+
 }
 
 .is-hidden {

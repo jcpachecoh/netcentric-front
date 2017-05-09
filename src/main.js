@@ -1,16 +1,15 @@
+
+/* eslint-disable */
 // create a shopping cart instance, set all callbacks
 var myShoppingCart = new SHOPPINGCART.model.ShoppingCart({ removeItem : removeItem,
 	                                                         updateTotal : updateCartTotal,
-	                                                         updateItemQuantity : updateItemQuantity });
-	
+	                                                         updateItemQuantity : updateItemQuantity });	
 // shopping cart UI callbacks
-
 function updateItemQuantity(id) {
 	$('#qty_'+id).val( function(i, oldval) {
     	return parseInt( oldval, 10) + 1;
 	});		
 }
-
 function updateCartTotal() {
 	var basicTotal=myShoppingCart.total().toFixed(2);
 	var vat=getVAT(basicTotal);
@@ -22,7 +21,6 @@ function updateCartTotal() {
 	$('#VAT').text(vat);
 	$('#total').text(total);
 }
-
 function getVAT(val){
 	var vat=val*0.2;
 	return vat;
@@ -50,7 +48,7 @@ function decrease(id){
 
 }
 function updateFooter(){
-	$('#footer').css("margin-top","600px");
+	$('#footer').css("margin-top","500px");
 }
 
 var row = '<tr id="shoppingcart_{{id}}">'+
